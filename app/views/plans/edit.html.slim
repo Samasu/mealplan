@@ -1,0 +1,6 @@
+h1 Mealの編集
+
+nav.justify-content-end
+ = link_to '一覧', plans_path, class: 'nav-link'
+
+= render partial: 'form', locals: { plan: @plan }

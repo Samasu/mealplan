@@ -1,0 +1,23 @@
+h1 Mealの詳細
+
+.nav.justify-content-end
+ = link_to '一覧', plans_path, class: 'nav-link'
+table.table.table-hover
+  tbody
+   tr
+     th= Plan.human_attribute_name(:id)
+     td= @plan.id
+   tr
+     th= Plan.human_attribute_name(:name)
+     td= @plan.name
+   tr
+     th= Plan.human_attribute_name(:desription)
+     td= simple_format(h(@plan.description), {}, sanitize: false, wrapper_tag: "div")
+   tr
+     th= Plan.human_attribute_name(:created_at)
+     td= @plan.created_at
+   tr
+     th= Plan.human_attribute_name(:updated_at)
+     td= @plan.updated_at
+= link_to '編集', edit_plan_path, class: 'btn btn-primary mr-3'
+= link_to '削除', @plan, method: :delete, data: { confirm: "ミール「#{@plan.name}」を削除します。よろしいですか？" }, class: 'btn btn-danger'
