@@ -1,4 +1,9 @@
-h1 ユーザープロフィール
-p 名前　: - @user.name
-p メールアドレス : - @user.email
-p プロフィール : - @user@profile
+h1 プロフィール画面
+
+= @user.name 
+br
+= @user.profile
+br
+= @user.email
+
+= @image_tag user_avatar(current_user, 40), class: "rounded-circle"

@@ -3,13 +3,11 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   before_action :authenticate_user!
 
-  def my_page
-  end
 
 protected
 
   def after_sign_in_path_for(resource)
-    my_page_path
+    @user
   end
 
 end

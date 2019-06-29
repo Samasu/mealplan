@@ -20,7 +20,14 @@ gem 'rails-i18n'
 gem 'devise'
 gem 'better_errors'
 gem 'binding_of_caller'
-
+gem 'ransack'
+gem 'pry-rails'
+gem 'kaminari'
+gem 'kaminari-bootstrap'
+gem 'jquery-rails'
+gem 'font-awesome-sass'
+gem 'font-awesome-rails'
+gem 'gravatar_image_tag', github: 'mdeering/gravatar_image_tag'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

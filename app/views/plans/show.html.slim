@@ -11,8 +11,12 @@ table.table.table-hover
      th= Plan.human_attribute_name(:name)
      td= @plan.name
    tr
-     th= Plan.human_attribute_name(:desription)
+     th= Plan.human_attribute_name(:description)
+
      td= simple_format(h(@plan.description), {}, sanitize: false, wrapper_tag: "div")
+   tr
+     th= Plan.human_attribute_name(:image)
+     th= image_tag @plan.image if @plan.image.attached?
    tr
      th= Plan.human_attribute_name(:created_at)
      td= @plan.created_at

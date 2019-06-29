@@ -1,6 +1,8 @@
 class PlansController < ApplicationController
+  PER = 1
   def index
-   @plans= Plan.all
+   @q = current_user.plans.ransack(params[:q])
+   @plans = @q.result(distinct: true).page(params[:page]).per(PER)
   end
 
   def show
@@ -8,11 +10,11 @@ class PlansController < ApplicationController
   end
 
   def new
-   @plan = Plan.new
+   @plan = current_user.plans.build
   end
 
   def create
-   plan = Plan.new(plan_params)
+   plan = current_user.plans.build(plan_params)
    plan.save!
    redirect_to plans_url, notice: "ミール「#{plan.name}」を登録しました。"
   end
@@ -36,6 +38,6 @@ class PlansController < ApplicationController
   private
 
   def plan_params
-    params.require(:plan).permit(:name, :description)
+    params.require(:plan).permit(:name, :description, :image)
   end
 end
