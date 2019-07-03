@@ -1,4 +1,8 @@
-h1 すべてのユーザー
--@users.each do |user|
-  =link_to user.name, user
-   
+.container
+ h2.p.text-center.title ユーザー一覧
+ .row
+  -@users.each do |user|
+   .card.col-lg-3
+    =link_to user.name, user
+    = user.email
+      

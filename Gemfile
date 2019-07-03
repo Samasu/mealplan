@@ -28,6 +28,10 @@ gem 'jquery-rails'
 gem 'font-awesome-sass'
 gem 'font-awesome-rails'
 gem 'gravatar_image_tag', github: 'mdeering/gravatar_image_tag'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'counter_culture'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

@@ -11,13 +11,19 @@ ja:
        plan:
        id: ID
        name: 名前
+       email: Eメール
+       password: パスワード
+       password_confirmation: パスワード確認
+       sign_in: 登録
+       sign_up: サインイン
        image: 画像
        description: 詳しい説明
        created_at: 登録日時
        updated_at: 更新日時
   devise:
-      registration:
+      registrations:
         Email: メールアドレス
+        password: パスワード
       sessions:
         signed_in: 'ログインに成功しました'
         password: パスワード

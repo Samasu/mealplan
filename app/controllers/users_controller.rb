@@ -5,5 +5,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @plans = @user.plans
+    @like_plans = @user.like_plans
   end
 end

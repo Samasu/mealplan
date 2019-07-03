@@ -1,12 +1,13 @@
 class PlansController < ApplicationController
-  PER = 1
+  PER = 5
   def index
    @q = current_user.plans.ransack(params[:q])
-   @plans = @q.result(distinct: true).page(params[:page]).per(PER)
+   @plans = @q.result(distinct: true,).page(params[:page]).per(PER).order('updated_at DESC')
   end
 
   def show
    @plan = Plan.find(params[:id])
+   @like = Like.new
   end
 
   def new

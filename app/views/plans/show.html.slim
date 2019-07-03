@@ -23,5 +23,11 @@ table.table.table-hover
    tr
      th= Plan.human_attribute_name(:updated_at)
      td= @plan.updated_at
+   tr
+     th=
+
+
+
+
 = link_to '編集', edit_plan_path, class: 'btn btn-primary mr-3'
 = link_to '削除', @plan, method: :delete, data: { confirm: "ミール「#{@plan.name}」を削除します。よろしいですか？" }, class: 'btn btn-danger'

@@ -1,9 +1,16 @@
-h1 プロフィール画面
+h1.p.center.title プロフィール画面
 
-= @user.name 
-br
-= @user.profile
-br
-= @user.email
+.container
+ .panel.panel-info.center
+  .panel-heading
+   =image_tag @user.avatar if @user.avatar.attached?
+  .panel-body
+   p= @user.email
+  .panel-body
+   p= @user.name 
+  .panel-body
+   p= link_to 'プロフィール編集', edit_user_registration_path
+  .panel-body
+   -@like_plans.each do |plan|
+    spanお気に入り記事 =link_to plan.name, plan_path(plan.id)
 
-= @image_tag user_avatar(current_user, 40), class: "rounded-circle"

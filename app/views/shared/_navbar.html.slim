@@ -1,21 +1,5 @@
-.app-title.navbar.navbar-expand-md.navbar-light.bg-light
-   .navbar-brand =link_to 'Mealplans', plans_path
-   ul
-    - if user_signed_in? 
-        =fa_icon("users 1x")
-        =link_to 'ユーザー一覧', users_path
-        =fa_icon("user-circle")
-        =link_to 'プロフィール', current_user
-        =fa_icon("sign-out")
-        =link_to 'ログアウト', destroy_user_session_path, method: :delete
-    - else
-        =fa_icon("users")
-        =link_to 'アカウント作成', new_user_registration_path
-        =fa_icon("sign-in")
-        =link_to 'ログイン', new_user_session_path
-
 nav.navbar.navbar-light.bg-light.navbar-expand-lg.fixed-top
-  a.navbar-brand.navbar-light =link_to 'Mealplans', plans_path
+  h2.navbar-brand.navbar-light =link_to 'Mealplans', plans_path, class:"nav-link"
   button.navbar-toggler data-target="#navbarCollapse" data-toggle="collapse" 
     span.navbar-toggler-icon
   #navbarCollapse.collapse.navbar-collapse
@@ -23,11 +7,11 @@ nav.navbar.navbar-light.bg-light.navbar-expand-lg.fixed-top
       li.navbar-item 
       - if user_signed_in? 
         =fa_icon("users 1x")
-        =link_to 'ユーザー一覧', users_path
-      li.navbar-item
+        =link_to 'ユーザー一覧', users_path, class:"nav-link"
+        li.navbar-item
         =fa_icon("user-circle")
-        =link_to 'プロフィール', current_user
+        =link_to 'プロフィール', current_user, class:"nav-link"
         =fa_icon("sign-out")
-        =link_to 'ログアウト', destroy_user_session_path, method: :deletee
-      li.navbar-item
-        a.nav-link href="#"  Contact
+        =link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"nav-link"
+      - else
+        =link_to '新規登録', new_user_registration_path, class:"nav-link"
