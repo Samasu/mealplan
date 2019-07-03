@@ -7,7 +7,8 @@ class PlansController < ApplicationController
 
   def show
    @plan = Plan.find(params[:id])
-   @like = Like.new
+   @comment = Comment.new
+   @comments = @plan.comments
   end
 
   def new

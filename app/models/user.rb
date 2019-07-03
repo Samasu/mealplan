@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :plans
   has_many :likes, dependent: :destroy 
   has_many :like_plans, through: :likes, source: :plan
-
+  has_many :comments, dependent: :destroy
   has_one_attached :avatar
   mount_uploader :avatar_path, AvatarUploader
   
