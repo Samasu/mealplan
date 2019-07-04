@@ -72,6 +72,9 @@ p-user {
 }
 
 /* プロフィール画面 */
+.profile-bg {
+ background-color: grey
+}
 .panel.panel-default {
  border: 2px red;
  column-width: 100;
@@ -81,5 +84,76 @@ p-user {
  background-color: rgb(172, 169, 169);
 }
 .image {
- border-radius: 50%;
+ border-radius: 20%;
+}
+.card-user {
+ width: 400px;
+ margin: 75px auto 0;
+ background-color: #fff;
+ box-shadow: 0 3px 30px rgba(0, 0, 0, .14);
+ color: #444;
+ text-align: center;
+ font-size: 16px;
+ border-radius: 5px;
+}
+.card-user .card-header-user {
+ position: relative;
+ height: 48px;
+}
+.card-user .card-hearder-user .profile-image-user {
+ width: 96px;
+ height: 96px;
+ border-radius: 1000px;
+ position: absolute;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ border: 6px solid #fff;
+ box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+}
+.card-user .card-body-user { 
+ padding: 10px 40px;
+ text-align: center;
+}
+.card-user .social-icon {
+ font-size: 18px;
+ margin:  0 7px;
+}
+.card-user .btn.btn-social-icon.btn-twitter {
+ color: #55ACEE;
+}
+.card-user .btn.btn-social-icon.btn-github {
+    color: #444444;
+}
+.card-user .btn.btn-social-icon.btn-google {
+    color: #DD4B39;
+}
+.car-user .card-footer-user {
+ display: table;
+ width: 100%;
+ border-top: 1px solid #e6e6e6
+}
+.card-user .card-footer-user .col-user {
+ display: table-cell;
+ padding: 5px 10px;
+ font-size: 15px;
+ text-align: center;
+}
+.card-user .card-footer-user .count-user {
+ font-size: 18px;
+ font-weight: 600;
+}
+@media screen and (max-width: 575px) {
+ .card-user{
+  width: 96%;
+ }
+ .card-user .card-body-user {
+  padding: 10px 20px;
+ }
+ .card-user .card-footer-user .col-user {
+  padding: 0 10px;
+ }
+ .card-user .card-footer-user .count-user{
+  display: block;
+  margin-bottom: 5px;
+ }
 }

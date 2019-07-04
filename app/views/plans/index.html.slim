@@ -25,13 +25,15 @@ p.h1.center.title Meal Lists
         = link_to plan.name, plan
        .col-8.card-font
      .card-img.justify-content: center
+      
      .card-footer
-      = plan.description
-      br.
+      .text-center = plan.description
+      .text-right= plan.likes.count
       - if user_signed_in?
        - if plan.liked_by?(current_user)
-         .text-right=link_to plan.likes.count, plan_likes_path(plan.id), method: :delete
+         .text-right =link_to 'いいね済', plan_likes_path(plan.id), method: :delete
+  
        - else
-         .text.right=link_to plan.likes.count, plan_likes_path(plan.id), method: :post
+         .text-right =link_to "いいね", plan_likes_path(plan.id), method: :post
       - else
-       p.spanお気に入り数: =link_to plan.likes.count
+        .spanお気に入り数: =link_to plan.likes.count
