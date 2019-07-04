@@ -1,24 +1,16 @@
-# README
+# ポートォリオ（料理の写真投稿サイト）
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+# アプリ内機能等
 
-* Ruby version
+* CRUD機能
 
-* System dependencies
+* ページ切り替え（kaminari)
 
-* Configuration
+* 写真投稿（carrierwave)
 
-* Database creation
+* いいね機能
 
-* Database initialization
+* 検索機能（ransack)
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* slimテンプレート使用
