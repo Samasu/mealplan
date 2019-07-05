@@ -1,19 +1,5 @@
 h1.p.center.title プロフィール画面
 
-.container
- .panel.panel-info.center
-  .panel-heading
-   =image_tag @user.avatar if @user.avatar.attached?
-  .panel-body
-   p= @user.email
-  .panel-body
-   p= @user.name 
-  .panel-body
-   p= link_to 'プロフィール編集', edit_user_registration_path
-  .panel-body
-   -@like_plans.each do |plan|
-    spanお気に入り記事 =link_to plan.name, plan_path(plan.id)
-
 .card-user
  .card-header-user
    =image_tag @user.avatar if @user.avatar.attached?
@@ -22,8 +8,8 @@ h1.p.center.title プロフィール画面
    p= @user.name 
    p= @user.email
   .card-profile-user
-   aaaaaaaaaaa
-   
+   -@like_plans.each do |plan|
+    =link_to plan.name, plan_path(plan.id)
    p
      a.btn.btn-social-icon.btn-twitter
       span.fa.fa-twitter

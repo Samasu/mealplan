@@ -3,7 +3,7 @@ class Plan < ApplicationRecord
  has_one_attached :image
  has_many :likes, dependent: :destroy
  has_many :like_users, through: :likes, source: :user
- has_many :comments
+ has_many :comments, dependent: :destroy
 
 
  def liked_by?(user)
