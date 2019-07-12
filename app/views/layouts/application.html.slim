@@ -8,11 +8,10 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   
   
-  body.top-wrapper
-  = render 'shared/navbar'
-  .container
-
-    - if flash.notice.present?
-      .alert.alert-success= flash.notice
   
-    = yield
+  = render 'shared/navbar'
+  body.bg-color
+  - if flash.notice.present?
+   .alert.alert-success= flash.notice
+  
+  = yield

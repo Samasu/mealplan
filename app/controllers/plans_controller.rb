@@ -1,8 +1,9 @@
 class PlansController < ApplicationController
   PER = 5
   def index
-   @q = current_user.plans.ransack(params[:q])
+   @q = Plan.all.ransack(params[:q])
    @plans = @q.result(distinct: true,).page(params[:page]).per(PER).order('updated_at DESC')
+   @all_ranks = Plan.find(Like.group(:plan_id).order('count(plan_id) desc').limit(3).pluck(:plan_id))
   end
 
   def show

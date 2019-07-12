@@ -16,8 +16,27 @@
 @import "bootstrap";
 @import "font-awesome";
 @import "font-awesome-sprockets";
+@import "plans.scss";
 
-.p {
+a {
+ color: black;
+}
+.navbar-nav {
+ text-decoration: none;
+}
+.nav-color {
+ background-color: rgb(241, 239, 239);
+}
+.bg-color {
+ background: radial-gradient(#F2B9A1, #EA6264);
+}
+.align-item-center{
+ list-style: blue;
+}
+.nav-link{
+ margin-left: 10px;
+}
+p {
  font-family: Arial, Helvetica, sans-serif;
 }
 .title {
@@ -38,13 +57,13 @@
 .search_button {
  text-align: center;
 }
+.container-plan {
+ margin-top: 5em;
+}
 .top-wrapper {
  background-image: image-url("background.jpg");
  background-size: cover;
- height: 600;
-}
-.container-plan {
- margin-top: 5em;
+
 }
 .tables {
  display: flex;

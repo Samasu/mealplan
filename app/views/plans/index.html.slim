@@ -1,13 +1,13 @@
 
-.container
-p.h1.center.title Meal Lists
-= search_form_for @q, class: 'mb-5' do |f|
- .form-group.row
-  = f.label :name_cont, '料理名', class: 'input'
-  .col-sm-10.
-    = f.search_field :name_cont, class: 'form-control'
- .form-group.center
-  = f.submit class: 'btn btn-primary'
+.plan-title Meal Lists
+.col-search
+ = search_form_for @q, class: 'mb-2' do |f|
+  .form-group.row
+   = f.label :name_cont, '料理名', class: 'input'
+   .col-sm-4.
+     = f.search_field :name_cont, class: 'form-control'
+   .form-group
+   .search= f.submit class: 'btn btn-primary'
 
 =paginate @plans
 
@@ -25,17 +25,18 @@ p.h1.center.title Meal Lists
         = link_to plan.name, plan
        .col-8.card-font
         = plan.user.name
-     .card-img.justify-content: center
-      
+     .card.img-fluid
+        =image_tag(plan.image) if plan.image.attached?
      .card-footer
       .text-center = plan.description
       .= pluralize(plan.comments.count, "コメント")
-      .text-right= plan.likes.count
+      
       - if user_signed_in?
        - if plan.liked_by?(current_user)
+         .text-right= plan.likes.count
          .text-right =link_to 'いいね済', plan_likes_path(plan.id), method: :delete
-  
        - else
+         .text-right= plan.likes.count
          .text-right =link_to "いいね", plan_likes_path(plan.id), method: :post
       - else
-        .spanお気に入り数: =link_to plan.likes.count
+        =link_to plan.likes.count

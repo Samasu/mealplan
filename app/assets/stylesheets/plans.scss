@@ -1,3 +1,17 @@
-// Place all the styles related to the plans controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.body-plans-index {
+ background-image: image-url("background.jpg");
+ background-size: cover;
+}
+
+.col-search .form-control{
+   text-align: right;
+}
+
+.plan-title {
+   font-size: 50px;
+   text-align: center;
+}
+.search {
+   display: inline;
+}
