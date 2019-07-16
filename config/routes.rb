@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   end
   
   resources :plans do
+    get :like_ranking, on: :member
     resource :likes, only: [:create, :destroy]
     resources :comments, only: [:create, :destroy]
   end

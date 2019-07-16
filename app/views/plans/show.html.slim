@@ -4,7 +4,7 @@ h1 Mealの詳細
 .nav.justify-content-end
  = link_to '一覧', plans_path, class: 'nav-link'
 table.table.table-hover
-  tbody
+  tbody.center
    tr
      th= Plan.human_attribute_name(:id)
      td= @plan.id
@@ -27,6 +27,10 @@ table.table.table-hover
    tr
      th=
 
+= link_to '編集', edit_plan_path, class: 'btn btn-primary mr-3'
+= link_to '削除', @plan, method: :delete, data: { confirm: "ミール「#{@plan.name}」を削除します。よろしいですか？" }, class: 'btn btn-danger'
+
+
 = form_with model: [@plan, @comment] do |f|
  = f.text_field :body
  = f.submit "コメントをする", class: "btn btn-primary"
@@ -36,9 +40,4 @@ table.table.table-hover
 - @comments.each do |comment|
  = render 'comments/comment', comment: comment
 
-= link_to '編集', edit_plan_path, class: 'btn btn-primary mr-3'
-= link_to '削除', @plan, method: :delete, data: { confirm: "ミール「#{@plan.name}」を削除します。よろしいですか？" }, class: 'btn btn-danger'
 
-
-
-                         

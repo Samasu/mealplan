@@ -2,7 +2,8 @@ h1.p.center.title プロフィール画面
 
 .card-user
  .card-head.circle-avatar.field
-   img-user.=image_tag @user.avatar, size:'50x50' if @user.avatar.attached?
+  -if @user.avatar?
+   img-user.=image_tag @user.avatar.url, size:'50x50'
  .card-body-user
   .card-name-user
    p= @user.name 
@@ -19,11 +20,12 @@ h1.p.center.title プロフィール画面
       span.fa.fa-google
   .card-footer-user
    .col-user
-    
+   -if current_user = @user
+   span =link_to 'プロフィール編集', edit_user_registration_path
    .col-user
    
 
-  - if current_user != @user
+  - if current_user = @user
    =link_to "フォロー", follows_user_path(@user.id)
    =link_to "フォロワー", followers_user_path(@user.id)
 

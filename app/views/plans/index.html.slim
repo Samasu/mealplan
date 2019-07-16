@@ -24,19 +24,21 @@
        .col-4
         = link_to plan.name, plan
        .col-8.card-font
-        = plan.user.name
-     .card.img-fluid
-        =image_tag(plan.image) if plan.image.attached?
+        = plan.name
+     .card-plan
+      -if plan.image.attached?
+       = image_tag(plan.image, class: 'card-img-top')
      .card-footer
-      .text-center = plan.description
-      .= pluralize(plan.comments.count, "コメント")
-      
+      = plan.description
+      .card-footer-body
+      = pluralize(plan.comments.count, "コメント")
+      .iine-plan
       - if user_signed_in?
-       - if plan.liked_by?(current_user)
-         .text-right= plan.likes.count
-         .text-right =link_to 'いいね済', plan_likes_path(plan.id), method: :delete
-       - else
-         .text-right= plan.likes.count
-         .text-right =link_to "いいね", plan_likes_path(plan.id), method: :post
+        - if plan.liked_by?(current_user)
+          = plan.likes.count
+          =link_to 'いいね済', plan_likes_path(plan.id), method: :delete
+        - else
+          = plan.likes.count
+          = link_to "いいね", plan_likes_path(plan.id), method: :post
       - else
         =link_to plan.likes.count

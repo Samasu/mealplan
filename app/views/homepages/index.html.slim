@@ -1,10 +1,11 @@
-.container.img-fluid.bg-image
- .container
-    br
-    br
-    br
-    p.h1.display-4.text-center
+.container-home.bg-image
+ .bg-mask
+  .body-home
+    p.h1.display-4.homepage-title
      | Mealplan へようこそ
-    p.lead.text-center
+    p.lead.
      | 毎日の献立に悩んでいないですか？食事の写真をシェアするサイトです。
-    p.center=link_to '新規登録', new_user_registration_path, class: 'btn btn-primary'
+    p.=link_to '新規登録', new_user_registration_path, class: 'btn btn-primary'
+
+
+ 

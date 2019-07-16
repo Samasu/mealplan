@@ -3,7 +3,8 @@
  .row
   -@users.each do |user|
    .card.col-lg-3.circle-avatar.field.show
-    =image_tag user.avatar, size:'50x50' if user.avatar.attached?
+    -if current_user.avatar?
+     =image_tag user.avatar.url, size:'50x50'
     =link_to user.name, user
     = user.email
     - if current_user != user

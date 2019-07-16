@@ -1,5 +1,5 @@
 class PlansController < ApplicationController
-  PER = 5
+  PER = 6
   def index
    @q = Plan.all.ransack(params[:q])
    @plans = @q.result(distinct: true,).page(params[:page]).per(PER).order('updated_at DESC')
