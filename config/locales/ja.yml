@@ -28,6 +28,7 @@ ja:
         signed_in: 'ログインに成功しました'
         password: パスワード
         Email: メールアドレス
+        signed_out: 'ログインアウトしました'
   views:
     pagination:
       first: "&laquo; 最初"

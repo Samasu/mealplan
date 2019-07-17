@@ -21,24 +21,26 @@
     .card.mb-3
      .card-header
       .row
-       .col-4
+       .col-7
         = link_to plan.name, plan
-       .col-8.card-font
+       .col-5.card-font
+        | by 
         = plan.name
      .card-plan
       -if plan.image.attached?
        = image_tag(plan.image, class: 'card-img-top')
      .card-footer
-      = plan.description
       .card-footer-body
-      = pluralize(plan.comments.count, "コメント")
-      .iine-plan
-      - if user_signed_in?
-        - if plan.liked_by?(current_user)
-          = plan.likes.count
-          =link_to 'いいね済', plan_likes_path(plan.id), method: :delete
+        = fa_icon 'comment'
+        = pluralize(plan.comments.count, "コメント")
+        span.iine-plan
+        = fa_icon 'heart'
+        - if user_signed_in?
+          - if plan.liked_by?(current_user)
+            = plan.likes.count
+            =link_to 'いいね済', plan_likes_path(plan.id), method: :delete
+          - else
+            = plan.likes.count
+            = link_to "いいね", plan_likes_path(plan.id), method: :post
         - else
-          = plan.likes.count
-          = link_to "いいね", plan_likes_path(plan.id), method: :post
-      - else
-        =link_to plan.likes.count
+          =link_to plan.likes.count

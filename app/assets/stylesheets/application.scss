@@ -18,6 +18,11 @@
 @import "font-awesome-sprockets";
 @import "plans.scss";
 
+
+h1 {
+ text-align: center;
+ color: white;
+}
 a {
  color: black;
 }
@@ -65,19 +70,7 @@ p {
  background-size: cover;
 
 }
-.tables {
- display: flex;
- flex-wrap: wrap;
- justify-content: space-around;
-}
-.table{
- width: 30%;
- min-width: 300px;
-}
-.plan-body {
- padding: 10px;
- float: left;
-}
+
 
 /* ユーザー一覧 */
 .user-container {

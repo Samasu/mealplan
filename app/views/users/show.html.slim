@@ -20,7 +20,7 @@ h1.p.center.title プロフィール画面
       span.fa.fa-google
   .card-footer-user
    .col-user
-   -if current_user = @user
+   -if @current_user == @user_id
    span =link_to 'プロフィール編集', edit_user_registration_path
    .col-user
    

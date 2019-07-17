@@ -1,13 +1,11 @@
-.container.col-4
-  .form.text-center
+.container.col-2
+  .form-new
     = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
       = render "devise/shared/error_messages", resource: resource
       .field
         = f.label :name
       .form-group
         = f.text_field :name, autofocus: true, autocomplete: "name", class: 'form-control'
-      .field
-        = f.label :avatar
       .form-group
       .field
         = f.label :email
@@ -29,8 +27,20 @@
         br
         = f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control'
       .actions
-        = f.submit "Sign up", class:'btn btn-primary'
-    = render "devise/shared/links"
+        = f.submit "新規登録", class:'btn btn-primary'
+        br
+        br
+        = render "devise/shared/links"
+      
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      = f.hidden_field :name, value: "test"
+      = f.hidden_field :email, value: "test1@gmail.com"
+      = f.hidden_field :password, value: "testtest"
+      = f.hidden_field :password_confirmation, value: "testtest"
+      = f.submit "テストログイン", class:"btn-flat-border"
+      
+
+
 
     
 
