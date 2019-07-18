@@ -7,7 +7,7 @@ h2 プロフィール画面
  .card-body-user
   .card-name-user
    p= @user.name 
-   p= @user.email
+   
   .card-profile-user
    -@like_plans.each do |plan|
     =link_to plan.name, plan_path(plan.id)
