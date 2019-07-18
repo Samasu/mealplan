@@ -1,7 +1,7 @@
+.text-center = render "devise/shared/error_messages", resource: resource
 .container.col-2
   .form-new
     = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-      = render "devise/shared/error_messages", resource: resource
       .field
         = f.label :name
       .form-group
