@@ -16,7 +16,7 @@
 @import "bootstrap";
 @import "font-awesome";
 @import "font-awesome-sprockets";
-@import "plans.scss";
+
 
 
 h1 {
@@ -30,10 +30,10 @@ a {
  text-decoration: none;
 }
 .nav-color {
- background-color: rgb(241, 239, 239);
+ background-color: rgb(184, 181, 181);
 }
 .bg-color {
- background: radial-gradient(#F2B9A1, #EA6264);
+ background: rgb(240, 241, 243)
 }
 .align-item-center{
  list-style: blue;

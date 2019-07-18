@@ -22,4 +22,7 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  url: <%= ENV['//nvjujewhcnlnyi:c5adf69eba9331121989e568b8271fc03aa1c2c039a4056b8fab94c38efab7b2@ec2-107-20-198-176.compute-1.amazonaws.com:5432/dfj9jl1vaql07l'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
