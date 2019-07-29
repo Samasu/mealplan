@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root to: 'homepages#index'
+  get 'policy', to: 'homepages#policy'
+
   devise_for :users 
   resources :users
 

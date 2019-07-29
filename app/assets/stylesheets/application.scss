@@ -154,6 +154,13 @@ p-user {
  font-size: 18px;
  font-weight: 600;
 }
+
+.policy-field {
+    text-align:center;
+    background: rgb(184, 181, 181);
+    justify-content: flex-start;
+
+}
 @media screen and (max-width: 575px) {
  .card-user{
   width: 96%;

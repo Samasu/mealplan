@@ -11,7 +11,12 @@ html
   
   = render 'shared/navbar'
   body.bg-color
-  - if flash.notice.present?
-   .alert.alert-success= flash.notice
+   - if flash.notice.present?
+    .alert.alert-success= flash.notice
   
-  = yield
+   = yield
+
+
+.policy-field
+   p =link_to 'プライバシーポリシー', policy_path
+   p copyright©2019 mealplan
